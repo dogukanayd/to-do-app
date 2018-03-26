@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">To do list</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                        <p>{{ Auth::user()->name }}</p>
-                        <p>{{ Auth::user()->id }}</p>
                     <div id="app"></div>
                     <script src="js/app.js"></script>
                 </div>

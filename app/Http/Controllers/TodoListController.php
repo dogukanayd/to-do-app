@@ -5,10 +5,14 @@ use App\TodoList;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Auth;
-
+use Illuminate\Support\Facades\DB;
 class TodoListController extends Controller {
 	public function index() {
-		return response(TodoList::all()->jsonSerialize(), Response::HTTP_OK);
+        return response(TodoList::all()->jsonSerialize(), Response::HTTP_OK);
+        
+        
+        #$user = DB::table('users')->where('name', 'John')->first();
+
 	}
 
 	public function destroy($id) {

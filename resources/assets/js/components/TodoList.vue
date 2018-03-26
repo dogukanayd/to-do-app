@@ -1,5 +1,5 @@
 <template>
-  <p>{{todo}} <button @click="del" class="float-right">X</button></p>
+  <p>{{todo}} ---> Created At: {{created_at}} <button @click="del" class="btn-danger float-right">X</button></p>
 </template>
 
 <script>
@@ -10,6 +10,6 @@
             }
         },
 
-        props: ['id', 'todo', 'user_id']
+        props: ['id', 'todo', 'user_id', 'created_at']
     }
 </script>

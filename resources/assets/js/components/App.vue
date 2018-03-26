@@ -2,14 +2,16 @@
     <div id="app">
         <form action="" method="post">
 
-            <div class="form-group">
-                <input name="todo" type="text" class="form-control" id="todo"  placeholder="to do..">
+            <div class="input-group">
+                
+                <input name="todo" type="text" class="form-control" id="todo"  placeholder="to do.."><span><button id="addButton" @click="create()">+</button></span>
+
+                 
             </div>
 
-            <div class="form-group">
-                <button @click="create()">Add</button>
-            </div>
+            
         </form>
+        <br><hr>
         <todo-list
             v-for="todo in todos"
             v-bind="todo"
@@ -20,10 +22,11 @@
 </template>
 
 <script>
-    function Todo({id, todo, user_id}){
+    function Todo({id, todo, user_id, created_at}){
         this.id = id;
         this.todo = todo;
         this.user_id = user_id;
+        this.created_at = created_at;
     }
     import TodoList from './TodoList.vue';
     export default{
@@ -78,3 +81,13 @@
         }
     }
 </script>
+
+<style>
+    #addButton {
+        background-color: #fdfdfd !important;
+        border: none;
+        font-size: 30px !important;
+        color: blue;
+    }
+</style>
+
